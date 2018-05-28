@@ -23,7 +23,7 @@ GameFormView.prototype.createGame = function (form) {
       playingTime: form.playingTime.value,
       players: {
         min: form.minNumPlayers.value,
-        max: form.minNumPlayers.value
+        max: form.maxNumPlayers.value
       }
     }
   };
