@@ -17,6 +17,8 @@ The application includes a README.md with instructions on running the applicatio
 
 Draw a diagram showing the dataflow through the application starting with a form submission, ending with the re-rendering of the page. This will involve a multi-direction data-flow with the client posting data to the server and the server sending data back to the client with the response. Detail the client, server and database in the diagram and include the names of the files involved in the process.
 
+![diagram](https://github.com/DetectiveAzul/cc-w13-d1-intro_to_js_full_stack/blob/master/images/full_stack_post_dataflow.png?raw=true)
+
 ### Questions
 
 1. What is responsible for defining the routes of the `games` resource?
@@ -58,5 +60,5 @@ To use mongo CRUD commands directly from our node/express server.
 ```
 2. Why do we need to use [`ObjectId`](https://mongodb.github.io/node-mongodb-native/api-bson-generated/objectid.html) from the MongoDB driver API?
 ```
-So EXPRESS can create 24 byte hex unique ID's for every entry on our database collections
+When the front-end makes a request regarding a specific game (SHOW, UPDATE, DELETE), the server access the ID of the particular game from the params object. This is always a string. To query the database for an object of a particular ID, if we ask it for the object with the ID of string type, it will never find a match. It needs us to make the query with an instance of ObjectId. We create the instance of ObjectId by passing in the ID as a string, for example, ObjectId("5af17fe430e043c3e62149b8").
 ```
